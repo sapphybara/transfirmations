@@ -5,20 +5,20 @@
  * @format
  */
 
-import React from 'react';
+import React from "react";
+import Demo from "components/Demo";
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
-  Text,
   useColorScheme,
   View,
-} from 'react-native';
+} from "react-native";
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === "dark";
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -27,7 +27,7 @@ function App(): JSX.Element {
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        barStyle={isDarkMode ? "light-content" : "dark-content"}
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <ScrollView
@@ -37,7 +37,7 @@ function App(): JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Text>voila</Text>
+          <Demo />
         </View>
       </ScrollView>
     </SafeAreaView>
