@@ -6,6 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
+    "lint:fix": "yarn run lint --fix",
     "start": "react-native start",
     "dev": "concurrently -n metro,app \"yarn start\" \"yarn android\"",
     "test": "jest"
