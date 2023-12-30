@@ -6,42 +6,23 @@
  */
 
 import React from "react";
-import Demo from "components/Demo";
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-  View,
-} from "react-native";
+import Card from "components/Card";
+import { SafeAreaView, ScrollView, StatusBar, View } from "react-native";
+import { ThemeProvider } from "context/Theme";
 
-import { Colors } from "react-native/Libraries/NewAppScreen";
-
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === "dark";
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+const App = () => {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? "light-content" : "dark-content"}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Demo />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <ThemeProvider>
+      <SafeAreaView>
+        <StatusBar barStyle={false ? "light-content" : "dark-content"} />
+        <ScrollView contentInsetAdjustmentBehavior="automatic">
+          <View>
+            <Card />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

@@ -4,9 +4,10 @@
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
-      "*": ["src/*"],
+      "*": ["src/*", "types/*"],
       "tests": ["tests/*"],
       "@components/*": ["src/components/*"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./types"]
   }
 }
