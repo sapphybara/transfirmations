@@ -8,7 +8,7 @@ export const ThemeContext = createContext<ThemeContextProps>({
   themeConfig: girly as Theme,
 });
 
-export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
+const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<"girly" | "boyish">("girly");
 
   const toggleTheme = () => {
@@ -29,3 +29,5 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+
+export default ThemeProvider;

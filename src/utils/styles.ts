@@ -12,6 +12,7 @@ export const styles = (themeConfig: Theme) =>
     },
     safeAreaView: {
       backgroundColor: themeConfig.palette.background.backdrop,
+      flex: 1,
     },
     text: {
       color: themeConfig.palette.text.primary,

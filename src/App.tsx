@@ -7,20 +7,21 @@
 
 import React from "react";
 import Card from "components/Card";
-import { SafeAreaView, ScrollView, StatusBar, View } from "react-native";
-import { ThemeProvider } from "context/Theme";
+import { ScrollView, StatusBar, View } from "react-native";
+import ThemeProvider from "context/Theme";
+import SafeAreaWrapper from "wrappers/SafeAreaWrapper";
 
 const App = () => {
   return (
     <ThemeProvider>
-      <SafeAreaView>
+      <SafeAreaWrapper>
         <StatusBar barStyle={false ? "light-content" : "dark-content"} />
         <ScrollView contentInsetAdjustmentBehavior="automatic">
           <View>
             <Card />
           </View>
         </ScrollView>
-      </SafeAreaView>
+      </SafeAreaWrapper>
     </ThemeProvider>
   );
 };
