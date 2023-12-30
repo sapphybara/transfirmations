@@ -1,18 +1,6 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  PropsWithChildren,
-  FC,
-} from "react";
+import React, { createContext, useState, PropsWithChildren, FC } from "react";
 import { girly, boyish } from "utils/mytheme.json";
-import Theme from "Theme";
-
-interface ThemeContextProps {
-  theme: string;
-  toggleTheme: () => void;
-  themeConfig: Theme; // You may want to replace 'any' with the actual type of your theme configuration
-}
+import Theme, { ThemeContextProps } from "Theme";
 
 export const ThemeContext = createContext<ThemeContextProps>({
   theme: "girly",
@@ -40,12 +28,4 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
       {children}
     </ThemeContext.Provider>
   );
-};
-
-export const useTheme = (): ThemeContextProps => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error("useTheme must be used within a ThemeProvider");
-  }
-  return context;
 };

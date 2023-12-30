@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleSheet, Switch, Text, View } from "react-native";
-import { useTheme } from "context/Theme";
+import { Switch, Text, View } from "react-native";
+import { useStyle, useTheme } from "utils/hooks";
 
 const Card = () => {
   const { theme, toggleTheme, themeConfig } = useTheme();
+  const styles = useStyle();
 
   return (
     <View style={styles.container}>
@@ -20,13 +21,5 @@ const Card = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 export default Card;

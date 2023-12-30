@@ -76,4 +76,10 @@ interface Theme {
   shadowOpacity: string;
 }
 
+export interface ThemeContextProps {
+  theme: "girly" | "boyish";
+  toggleTheme: () => void;
+  themeConfig: Theme;
+}
+
 export default Theme;
