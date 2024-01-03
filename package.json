@@ -3,16 +3,19 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "adb-reverse": "adb reverse tcp:8097 tcp:8097",
     "android": "react-native run-android",
+    "dev": "concurrently -n metro,app,devtools \"yarn start\" \"yarn android\" \"yarn devtools\"",
+    "dev:device": "concurrently -n metro,app \"yarn start\" \"yarn android\"",
+    "dev:nocache": "concurrently -n metro,app,devtools \"yarn start:nocache\" \"yarn android\" \"yarn devtools\"",
+    "devtools": "yarn adb-reverse & react-devtools",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "lint:fix": "yarn run lint --fix",
+    "reset-modules": "rm -rf node_modules && yarn install",
     "start": "react-native start",
     "start:nocache": "yarn start --reset-cache",
-    "dev": "concurrently -n metro,app \"yarn start\" \"yarn android\"",
-    "dev:nocache": "concurrently -n metro,app \"yarn start:nocache\" \"yarn android\"",
-    "test": "jest",
-    "reset-modules": "rm -rf node_modules && yarn install"
+    "test": "jest"
   },
   "dependencies": {
     "react": "18.2.0",
