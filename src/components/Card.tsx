@@ -1,13 +1,13 @@
 import React from "react";
-import { Switch, Text, View } from "react-native";
-import { useStyle, useTheme } from "utils/hooks";
+import { Switch, Text } from "react-native";
+import { useTheme } from "utils/hooks";
+import ViewWrapper from "wrappers/ViewWrapper";
 
 const Card = () => {
   const { theme, toggleTheme, themeConfig } = useTheme();
-  const styles = useStyle();
 
   return (
-    <View style={styles.container}>
+    <ViewWrapper>
       <Text>Voila</Text>
       <Switch
         trackColor={{
@@ -18,7 +18,12 @@ const Card = () => {
         onValueChange={toggleTheme}
         value={theme === "girly"}
       />
-    </View>
+      <ViewWrapper style={{ flex: 0 }}>
+        <Text style={{ color: themeConfig.palette.text.primary }}>
+          In Card.tsx
+        </Text>
+      </ViewWrapper>
+    </ViewWrapper>
   );
 };
 

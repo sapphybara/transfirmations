@@ -11,7 +11,7 @@ export const styles = ({ palette }: Theme) =>
     },
     viewBase: {
       alignItems: "center",
-      backgroundColor: palette.background.level2,
+      backgroundColor: palette.background.body,
       color: palette.text.primary,
       flex: 1,
       justifyContent: "center",
