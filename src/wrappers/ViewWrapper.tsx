@@ -30,6 +30,9 @@ const getColorFromLevel = (level: number) => {
     case 4:
       return themeConfig.palette.background.level3;
     default:
+      if (level > 4) {
+        throw new Error("Level cannot be greater than 4");
+      }
       return themeConfig.palette.background.body;
   }
 };

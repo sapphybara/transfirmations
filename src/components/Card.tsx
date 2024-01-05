@@ -7,8 +7,8 @@ const Card = () => {
   const { theme, toggleTheme, themeConfig } = useTheme();
 
   return (
-    <ViewWrapper>
-      <Text>Voila</Text>
+    <>
+      <Text style={{ fontSize: 20 }}>TransFirmations</Text>
       <Switch
         trackColor={{
           false: themeConfig.palette.primary["200"],
@@ -18,12 +18,12 @@ const Card = () => {
         onValueChange={toggleTheme}
         value={theme === "girly"}
       />
-      <ViewWrapper style={{ flex: 0 }}>
+      <ViewWrapper style={{ height: 300, width: "100%" }}>
         <Text style={{ color: themeConfig.palette.text.primary }}>
           In Card.tsx
         </Text>
       </ViewWrapper>
-    </ViewWrapper>
+    </>
   );
 };
 
