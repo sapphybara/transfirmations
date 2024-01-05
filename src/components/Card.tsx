@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Text } from "react-native";
 import { useTheme } from "utils/hooks";
+import TextWrapper from "wrappers/TextWrapper";
 import ViewWrapper from "wrappers/ViewWrapper";
 
 const Card = () => {
@@ -8,7 +9,9 @@ const Card = () => {
 
   return (
     <>
-      <Text style={{ fontSize: 20 }}>TransFirmations</Text>
+      <TextWrapper sizeVariant="large" style={{ fontFamily: "gilbert_bold" }}>
+        TransFirmations
+      </TextWrapper>
       <Switch
         trackColor={{
           false: themeConfig.palette.primary["200"],
@@ -19,9 +22,7 @@ const Card = () => {
         value={theme === "girly"}
       />
       <ViewWrapper style={{ height: 300, width: "100%" }}>
-        <Text style={{ color: themeConfig.palette.text.primary }}>
-          In Card.tsx
-        </Text>
+        <TextWrapper>In Card.tsx</TextWrapper>
       </ViewWrapper>
     </>
   );

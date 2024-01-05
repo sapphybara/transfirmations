@@ -8,6 +8,8 @@ export const styles = ({ palette }: Theme) =>
     },
     text: {
       color: palette.text.primary,
+      fontFamily: "lato_regular",
+      fontWeight: "normal",
     },
     viewBase: {
       alignItems: "center",
