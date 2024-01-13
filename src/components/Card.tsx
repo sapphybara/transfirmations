@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Text } from "react-native";
+import { Switch } from "react-native";
 import { useTheme } from "utils/hooks";
 import TextWrapper from "wrappers/TextWrapper";
 import ViewWrapper from "wrappers/ViewWrapper";
@@ -9,15 +9,17 @@ const Card = () => {
 
   return (
     <>
-      <TextWrapper sizeVariant="large" style={{ fontFamily: "gilbert_bold" }}>
+      <TextWrapper
+        sizeVariant="large"
+        style={{ fontFamily: "gilbert_bold", fontSize: 36 }}>
         TransFirmations
       </TextWrapper>
       <Switch
         trackColor={{
-          false: themeConfig.palette.primary["200"],
-          true: themeConfig.palette.primary["800"],
+          false: themeConfig.palette.background.tooltip,
+          true: themeConfig.palette.primary["200"],
         }}
-        thumbColor={themeConfig.palette.secondary["500"]}
+        thumbColor={themeConfig.palette.primary["600"]}
         onValueChange={toggleTheme}
         value={theme === "girly"}
       />
