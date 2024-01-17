@@ -11,13 +11,17 @@ const Card = () => {
     <>
       <TextWrapper
         sizeVariant="large"
-        style={{ fontFamily: "gilbert_bold", fontSize: 36 }}>
+        // styleVariant="decorative"
+        style={{
+          fontFamily: "gilbert_bold",
+          fontSize: 36,
+        }}>
         TransFirmations
       </TextWrapper>
       <Switch
         trackColor={{
           false: themeConfig.palette.background.tooltip,
-          true: themeConfig.palette.primary["200"],
+          true: themeConfig.palette.background.tooltip,
         }}
         thumbColor={themeConfig.palette.primary["600"]}
         onValueChange={toggleTheme}
